@@ -3,8 +3,8 @@ self.__BUILD_MANIFEST = {
     "afterFiles": [],
     "beforeFiles": [
       {
-        "source": "/pgi-corporate-website//_next/:path+",
-        "destination": "/pgi-corporate-website/_next/:path+"
+        "source": "/PG-Corporate-Website-//_next/:path+",
+        "destination": "/PG-Corporate-Website-/_next/:path+"
       }
     ],
     "fallback": []
