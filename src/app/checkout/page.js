@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,8 +9,16 @@ import Link from 'next/link';
 
 export default function CheckoutPage() {
   const { items, totalPrice } = useCart();
-  const date = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-  const invoiceNum = `PG-${Math.floor(100000 + Math.random() * 900000)}`;
+  const [isClient, setIsClient] = useState(false);
+  const [invoiceDetails, setInvoiceDetails] = useState({ date: '', num: '' });
+
+  useEffect(() => {
+    setIsClient(true);
+    setInvoiceDetails({
+      date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }),
+      num: `PG-${Math.floor(100000 + Math.random() * 900000)}`
+    });
+  }, []);
 
   if (items.length === 0) {
     return (
@@ -36,8 +45,8 @@ export default function CheckoutPage() {
             </div>
             <div className={styles.invoiceMeta}>
               <h1>INVOICE</h1>
-              <p><strong>Invoice #:</strong> {invoiceNum}</p>
-              <p><strong>Date:</strong> {date}</p>
+              <p><strong>Invoice #:</strong> {invoiceDetails.num}</p>
+              <p><strong>Date:</strong> {invoiceDetails.date}</p>
             </div>
           </div>
 

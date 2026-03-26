@@ -67,7 +67,7 @@ export function CartProvider({ children }) {
       }
     } catch (e) { /* ignore */ }
     setHydrated(true);
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (hydrated) {
