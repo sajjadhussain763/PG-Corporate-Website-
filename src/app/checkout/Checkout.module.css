@@ -1,0 +1,153 @@
+.page {
+  background: var(--grey-50);
+}
+
+.content {
+  padding: 200px 0 100px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.invoice {
+  background: var(--white);
+  padding: 60px;
+  border-radius: 8px;
+  box-shadow: 0 4px 50px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.invoiceHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  border-bottom: 2px solid var(--grey-100);
+  padding-bottom: 30px;
+}
+
+.brand {
+  text-align: left;
+}
+
+.logoText {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary);
+  display: block;
+}
+
+.brand p {
+  color: var(--grey-500);
+  margin: 0;
+}
+
+.invoiceMeta h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--grey-300);
+  text-align: right;
+}
+
+.invoiceMeta p {
+  text-align: right;
+  margin: 0;
+  color: var(--grey-600);
+}
+
+.detailsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.col h4 {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--grey-800);
+}
+
+.col p {
+  margin: 0;
+  color: var(--grey-600);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 60px;
+}
+
+.table th {
+  text-align: left;
+  padding: 15px;
+  background: var(--grey-50);
+  border-bottom: 2px solid var(--grey-200);
+}
+
+.table td {
+  padding: 20px 15px;
+  border-bottom: 1px solid var(--grey-100);
+}
+
+.summaryBox {
+  margin-left: auto;
+  width: 100%;
+  max-width: 350px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  color: var(--grey-600);
+}
+
+.total {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  border-top: 2px solid var(--grey-200);
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 100px;
+  border-top: 1px dashed var(--grey-300);
+  padding-top: 40px;
+}
+
+.statusBadge {
+  position: absolute;
+  top: 120px;
+  right: 60px;
+  border: 4px solid #4CAF50;
+  color: #4CAF50;
+  padding: 10px 40px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  transform: rotate(-15deg);
+  opacity: 0.3;
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media print {
+  .actions, .header, .footer-container {
+    display: none !important;
+  }
+  .invoice {
+    box-shadow: none;
+    padding: 20px;
+  }
+}

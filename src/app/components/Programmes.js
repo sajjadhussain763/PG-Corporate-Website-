@@ -28,35 +28,33 @@ const PROGRAMMES = [
 
 export default function Programmes() {
   return (
-    <section className={`section ${styles.programmes}`} id="programmes">
+    <section className={styles.programmes} id="programmes">
       <div className="container">
         <div className={styles.header}>
-          <span className="section-label">Our Programmes</span>
-          <h2 className="section-title">Three Paths to <span className="text-gradient">Professional Growth</span></h2>
-          <p className="section-subtitle">
-            Tailored development pathways designed for every role in Higher Education — from PhD candidates to Heads of Department.
-          </p>
+          <h2 className="section-title">Shop by <span className="text-gradient">Category</span></h2>
         </div>
 
         <div className={styles.grid}>
           {PROGRAMMES.map((prog) => (
             <div key={prog.title} className={styles.card}>
-              <div className={styles.cardIcon} style={{ background: `${prog.color}15`, color: prog.color }}>
+              <div className={styles.imagePlaceholder}>
                 <span>{prog.icon}</span>
               </div>
-              <h3 className={styles.cardTitle}>{prog.title}</h3>
-              <p className={styles.cardDesc}>{prog.description}</p>
-              <ul className={styles.features}>
-                {prog.features.map(f => (
-                  <li key={f} className={styles.feature}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={prog.color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a href="#packages" className={styles.cardLink} style={{ color: prog.color }}>
-                View Packages →
-              </a>
+              <div className={styles.cardContent}>
+                <h3 className={styles.cardTitle}>{prog.title}</h3>
+                <p className={styles.cardDesc}>{prog.description}</p>
+                <ul className={styles.features}>
+                  {prog.features.map(f => (
+                    <li key={f} className={styles.feature}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#packages" className={styles.cardLink} style={{ color: 'var(--accent)' }}>
+                  Shop now
+                </a>
+              </div>
             </div>
           ))}
         </div>

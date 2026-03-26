@@ -1,94 +1,123 @@
 .offers {
-  background: var(--navy-light);
+  background: var(--white);
+  padding: 80px 0;
 }
 
-.header { text-align: center; margin-bottom: 60px; }
-.header .section-subtitle { margin: 0 auto; }
+.countdownBox {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--grey-600);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.timer {
+  color: #d11212;
+  font-family: monospace;
+  font-size: 1.4rem;
+  background: #fff4f4;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid #ffcfcf;
+}
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 24px;
 }
 
 .card {
+  background: var(--white);
+  border: 1px solid var(--grey-300);
+  border-radius: 4px;
+  padding: 30px;
   position: relative;
-  background: var(--navy);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--radius-lg);
-  padding: 40px 28px 32px;
-  text-align: center;
-  transition: var(--transition);
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.ribbon {
+.badge {
   position: absolute;
-  top: 18px;
-  right: -32px;
-  transform: rotate(45deg);
-  font-size: 0.7rem;
+  top: 12px;
+  right: 12px;
+  background: #ECEB98;
+  color: #111;
+  padding: 4px 10px;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--white);
-  padding: 5px 40px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .emoji {
-  font-size: 3rem;
-  margin-bottom: 18px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .title {
-  font-size: 1.3rem;
-  color: var(--white);
-  margin-bottom: 6px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  font-size: 0.85rem;
-  color: var(--grey-400);
-  font-style: italic;
-  margin-bottom: 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 20px;
 }
 
 .desc {
-  font-size: 0.9rem;
-  color: var(--grey-400);
-  line-height: 1.7;
-  margin-bottom: 22px;
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 24px;
+  line-height: 1.5;
+  flex: 1;
 }
 
 .pricing {
   display: flex;
-  gap: 12px;
-  justify-content: center;
   align-items: center;
+  gap: 12px;
+  margin-top: auto;
   margin-bottom: 24px;
 }
 
 .oldPrice {
-  font-size: 1.1rem;
-  color: var(--grey-500);
+  font-size: 0.9rem;
+  color: #6a6f73;
   text-decoration: line-through;
 }
 
 .newPrice {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #111;
 }
 
-@media (max-width: 900px) {
-  .grid { grid-template-columns: 1fr 1fr; }
+.buyBtn {
+  width: 100%;
+  padding: 12px;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 4px;
+  transition: 0.2s;
 }
 
-@media (max-width: 600px) {
-  .grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+.buyBtn:hover {
+  background: #2d3133;
+}
+
+@media (max-width: 968px) {
+  .grid { grid-template-columns: 1fr; }
 }

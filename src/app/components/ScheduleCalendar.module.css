@@ -1,5 +1,6 @@
 .schedule {
-  background: var(--navy);
+  background: var(--white);
+  padding: 80px 0;
 }
 
 .header {
@@ -7,39 +8,34 @@
   margin-bottom: 60px;
 }
 
-.header .section-subtitle { margin: 0 auto; }
-
 .calendarList {
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .courseItem {
-  background: var(--navy-light);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--white);
+  border: 1px solid var(--grey-300);
+  border-radius: 4px;
   overflow: hidden;
-  transition: var(--transition);
-}
-
-.courseItem:hover {
-  border-color: rgba(59,130,246,0.2);
+  transition: all 0.3s ease;
 }
 
 .active {
   border-color: var(--accent);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .summary {
-  padding: 24px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 24px 30px;
   cursor: pointer;
+  background: var(--white);
 }
 
 .courseMain {
@@ -49,101 +45,97 @@
 }
 
 .code {
-  background: var(--accent-light);
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 0.8rem;
-  padding: 6px 14px;
+  background: var(--grey-100);
+  color: var(--navy);
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 800;
   border-radius: 4px;
-  letter-spacing: 1px;
 }
 
 .courseName {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
   margin-bottom: 4px;
 }
 
 .meta {
   font-size: 0.85rem;
-  color: var(--grey-400);
+  color: var(--grey-500);
 }
 
 .summaryActions {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .detailsBtn {
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent);
+  text-decoration: none;
+}
+
+.detailsBtn:hover {
   text-decoration: underline;
 }
 
 .chevron {
   font-size: 1.5rem;
-  color: var(--grey-500);
-  font-family: monospace;
+  font-weight: 400;
+  color: var(--grey-400);
+  width: 24px;
+  text-align: center;
 }
 
 .timetable {
-  padding: 0 32px 32px;
-  animation: fadeIn 0.4s ease;
+  padding: 0 30px 30px;
+  border-top: 1px solid var(--grey-200);
+  background: var(--grey-100);
 }
 
 .timetableHeader {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 0 10px;
+  border-bottom: 1px solid var(--grey-300);
   font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-weight: 800;
   color: var(--grey-500);
-  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .sessionRow {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   padding: 16px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid var(--grey-200);
   font-size: 0.9rem;
-  color: var(--grey-300);
+  color: var(--navy);
 }
 
-.date {
-  font-weight: 600;
-  color: var(--white);
-}
-
-.time {
-  color: var(--gold);
-  font-size: 0.85rem;
-}
+.date { font-weight: 700; }
+.topic { font-weight: 500; }
+.time { color: var(--grey-500); text-align: right; }
 
 .ctaRow {
-  margin-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: rgba(255,255,255,0.03);
-  border-radius: var(--radius-sm);
+  margin-top: 24px;
 }
 
 .ctaRow p {
-  font-size: 0.9rem;
-  color: var(--grey-400);
-  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
 }
 
 @media (max-width: 768px) {
-  .summary { padding: 20px; flex-direction: column; gap: 20px; align-items: flex-start; }
-  .summaryActions { width: 100%; justify-content: space-between; }
-  .courseMain { gap: 16px; }
+  .summary { flex-direction: column; align-items: flex-start; gap: 20px; }
   .timetableHeader { display: none; }
-  .sessionRow { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
-  .ctaRow { flex-direction: column; gap: 16px; text-align: center; }
+  .sessionRow { grid-template-columns: 1fr; gap: 8px; }
+  .time { text-align: left; }
 }

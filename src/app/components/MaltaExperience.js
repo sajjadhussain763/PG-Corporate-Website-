@@ -4,24 +4,16 @@ import styles from './MaltaExperience.module.css';
 
 export default function MaltaExperience() {
   return (
-    <section className={`section ${styles.malta}`} id="malta">
-      <div className={styles.bg}>
-        <div className={styles.overlay} />
-      </div>
+    <section className={styles.malta} id="malta">
       <div className={`container ${styles.content}`}>
-        <span className={styles.badge}>Physical Programme</span>
-        <h2 className={styles.title}>
-          The Malta <span className="text-gradient">Experience</span>
-        </h2>
-        <p className={styles.tagline}>
-          Where Companies Thrive and Startups Flourish
-        </p>
+        <span className={styles.badge}>PHYSICAL PROGRAMME</span>
+        <h2 className={styles.title}>The Malta <span className="text-gradient">Experience</span></h2>
+        <p className={styles.tagline}>Where Companies Thrive and Startups Flourish</p>
         <p className={styles.description}>
-          Immerse yourself in the Mediterranean&apos;s most dynamic business hub. Malta — a European
-          Union member state with a thriving fintech ecosystem, world-class universities, and a
-          multicultural environment that attracts talent from across the globe.
+          Immerse yourself in the Mediterranean&apos;s most dynamic business hub. Malta — a European Union member state with a thriving fintech ecosystem and world-class universities.
         </p>
-        <div className={styles.features}>
+        
+        <div className={styles.grid}>
           <div className={styles.featureCard}>
             <span className={styles.featureIcon}>🏝️</span>
             <h4>Island Campus</h4>
@@ -43,9 +35,10 @@ export default function MaltaExperience() {
             <p>Graduate with a premium portfolio and certificate recognised by institutions worldwide.</p>
           </div>
         </div>
-        <a href="#packages" className="btn btn-gold btn-lg">
+
+        <a href="#packages" className="btn btn-primary btn-lg">
           Explore the Premium Malta Package
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </section>

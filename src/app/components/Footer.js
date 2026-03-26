@@ -3,67 +3,64 @@
 import styles from './Footer.module.css';
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.grid}>
-          <div className={styles.brand}>
-            <div className={styles.logo}>
-              <span className={styles.logoIcon}>PG</span>
-              <span className={styles.logoText}>Training</span>
-            </div>
+          <div className={styles.logoArea}>
+            <a href="#home" className={styles.logo}>
+              PG<span>Training</span>
+            </a>
             <p className={styles.tagline}>
-              Empowering the global academic community through strategic profissional development 
-              and linguistic excellence for over 25 years.
+              Global leaders in English language education and international work placement solutions since 2000.
             </p>
             <div className={styles.socials}>
-              {['ln', 'tw', 'fb', 'ig'].map(s => (
-                <a key={s} href={`#${s}`} className={styles.socialLink}>
+              {['fb', 'tw', 'ig', 'li'].map(s => (
+                <a key={s} href="#" className={styles.socialIcon}>
                   {s.toUpperCase()}
                 </a>
               ))}
             </div>
           </div>
 
-          <div className={styles.linksColumn}>
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#programmes">Programmes</a></li>
-              <li><a href="#packages">Pricing & Packages</a></li>
-              <li><a href="#schedule">Training Schedule</a></li>
-            </ul>
+          <div className={styles.column}>
+            <h4 className={styles.columnTitle}>Company</h4>
+            <div className={styles.links}>
+              <a href="#about" className={styles.link}>About Us</a>
+              <a href="#programmes" className={styles.link}>Our Programmes</a>
+              <a href="#packages" className={styles.link}>Pricing Packages</a>
+              <a href="#contact" className={styles.link}>Contact Us</a>
+            </div>
           </div>
 
-          <div className={styles.linksColumn}>
-            <h4>Programmes</h4>
-            <ul>
-              <li><a href="#programmes">Academic Excellence</a></li>
-              <li><a href="#programmes">Administrative Dev</a></li>
-              <li><a href="#programmes">English Language</a></li>
-              <li><a href="#malta">Malta Experience</a></li>
-              <li><a href="#programmes">Linguistic Immersion</a></li>
-            </ul>
+          <div className={styles.column}>
+            <h4 className={styles.columnTitle}>Services</h4>
+            <div className={styles.links}>
+              <a href="#" className={styles.link}>Mobility Solutions</a>
+              <a href="#" className={styles.link}>Academic Placements</a>
+              <a href="#" className={styles.link}>Remote Internships</a>
+              <a href="#" className={styles.link}>Corporate Training</a>
+            </div>
           </div>
 
-          <div className={styles.linksColumn}>
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Cookie Policy</a></li>
-              <li><a href="#">Accreditation</a></li>
-            </ul>
+          <div className={styles.column}>
+            <h4 className={styles.columnTitle}>Support</h4>
+            <div className={styles.links}>
+              <a href="#" className={styles.link}>Help Center</a>
+              <a href="#" className={styles.link}>Order Tracking</a>
+              <a href="#" className={styles.link}>FAQs</a>
+              <a href="#" className={styles.link}>Language / EN</a>
+            </div>
           </div>
         </div>
 
         <div className={styles.bottom}>
-          <p>&copy; {year} PG Corporate Training. All rights reserved.</p>
+          <p className={styles.copyright}>
+            © {new Date().getFullYear()} PG Training. All Rights Reserved.
+          </p>
           <div className={styles.bottomLinks}>
-            <span>Global Competence • Strategic Growth • Educational Legacy</span>
+            <a href="#" className={styles.link}>Privacy Policy</a>
+            <a href="#" className={styles.link}>Terms of Service</a>
           </div>
         </div>
       </div>

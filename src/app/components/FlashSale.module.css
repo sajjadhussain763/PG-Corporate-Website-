@@ -1,0 +1,57 @@
+.banner {
+  background: #FF4400; /* Alibaba/Amazon aggressive orange */
+  color: var(--white);
+  padding: 12px 0;
+  position: fixed;
+  top: 140px; /* Below the double-row header */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(255, 68, 0, 0.2);
+  animation: slideDown 0.4s ease-out;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+
+.tag {
+  background: var(--white);
+  color: #FF4400;
+  font-size: 0.7rem;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.close {
+  position: absolute;
+  right: 24px;
+  color: var(--white);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .text { font-size: 0.85rem; padding-right: 32px; }
+  .tag { display: none; }
+}

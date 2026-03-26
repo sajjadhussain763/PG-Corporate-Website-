@@ -25,95 +25,88 @@
   font-weight: 800;
   font-size: 1.4rem;
   color: var(--white);
+  color: var(--white);
 }
 
-.logoIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--accent), var(--cta));
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
+.logo span {
+  color: var(--cta);
 }
 
 .tagline {
   font-size: 0.95rem;
   color: var(--grey-400);
-  line-height: 1.7;
+  max-width: 300px;
+  line-height: 1.6;
 }
 
 .socials {
   display: flex;
-  gap: 12px;
+  gap: 16px;
 }
 
-.socialLink {
-  width: 36px;
-  height: 36px;
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.05);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navy);
-  border: 1px solid rgba(255,255,255,0.06);
   border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--grey-400);
-  transition: var(--transition);
+  transition: 0.2s;
 }
 
-.socialLink:hover {
-  background: var(--accent);
-  color: var(--white);
-  border-color: var(--accent);
-  transform: translateY(-3px);
+.socialIcon:hover {
+  background: var(--cta);
+  color: var(--navy);
 }
 
-.linksColumn h4 {
+.columnTitle {
   font-size: 1.1rem;
+  font-weight: 700;
   margin-bottom: 24px;
+  color: var(--white);
 }
 
-.linksColumn ul {
+.links {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
-.linksColumn a {
-  font-size: 0.95rem;
+.link {
+  font-size: 0.9rem;
   color: var(--grey-400);
-  transition: var(--transition);
+  transition: 0.2s;
 }
 
-.linksColumn a:hover {
+.link:hover {
   color: var(--white);
-  padding-left: 5px;
+  text-decoration: underline;
 }
 
 .bottom {
-  padding-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+}
+
+.copyright {
+  font-size: 0.85rem;
   color: var(--grey-500);
 }
 
-.bottomLinks span {
-  font-weight: 600;
-  color: var(--grey-600);
-  letter-spacing: 1px;
+.bottomLinks {
+  display: flex;
+  gap: 24px;
 }
 
-@media (max-width: 1024px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 968px) {
+  .grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 600px) {
-  .grid { grid-template-columns: 1fr; gap: 40px; }
+  .grid { grid-template-columns: 1fr; }
   .bottom { flex-direction: column; gap: 20px; text-align: center; }
 }

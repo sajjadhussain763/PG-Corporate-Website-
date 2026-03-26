@@ -1,12 +1,19 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useCart } from '../context/CartContext';
 import styles from './Cart.module.css';
 
 export default function Cart() {
   const { items, isOpen, totalPrice, dispatch } = useCart();
+  const router = useRouter();
 
   if (!isOpen) return null;
+
+  const handleCheckout = () => {
+    dispatch({ type: 'SET_OPEN', payload: false });
+    router.push('/checkout');
+  };
 
   return (
     <div className={styles.overlay} onClick={() => dispatch({ type: 'SET_OPEN', payload: false })}>
@@ -69,7 +76,10 @@ export default function Cart() {
               <span>Total Amount</span>
               <span>£{totalPrice.toLocaleString()}</span>
             </div>
-            <button className={`btn btn-primary ${styles.checkoutBtn}`}>
+            <button 
+              className={`btn btn-primary ${styles.checkoutBtn}`} 
+              onClick={handleCheckout}
+            >
               Checkout Now
             </button>
           </div>

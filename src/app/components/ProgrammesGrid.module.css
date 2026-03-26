@@ -1,0 +1,141 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.imagePlaceholder {
+  aspect-ratio: 16/9;
+  background: var(--grey-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  border: 1px solid var(--grey-200);
+}
+
+.info {
+  padding: 12px 0;
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.instructor {
+  font-size: 0.8rem;
+  color: var(--grey-500);
+  margin-bottom: 4px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.score {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #b4690e;
+}
+
+.stars {
+  color: #eb8a00;
+  font-size: 0.8rem;
+}
+
+.count {
+  font-size: 0.8rem;
+  color: var(--grey-500);
+}
+
+.pricing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.oldPrice {
+  font-size: 0.9rem;
+  color: var(--grey-500);
+  text-decoration: line-through;
+}
+
+.badge {
+  display: inline-block;
+  background: #f3ca8c;
+  color: #3d3c0a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  margin-top: 8px;
+}
+
+@media (max-width: 1200px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.addBtn, .buyBtn {
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.2s;
+}
+
+.addBtn {
+  background: #FFD814;
+  border-color: #FCD200;
+  color: #111;
+}
+
+.addBtn:hover {
+  background: #F7CA00;
+}
+
+.buyBtn {
+  background: #FFA41C;
+  border-color: #FF8F00;
+  color: #111;
+}
+
+.buyBtn:hover {
+  background: #FA8900;
+}

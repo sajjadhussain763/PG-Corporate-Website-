@@ -1,0 +1,93 @@
+.title {
+  text-align: center;
+  font-size: 2.22rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 50px;
+}
+
+.carousel {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide {
+  flex: 0 0 100%;
+  padding: 20px;
+}
+
+.card {
+  background: var(--grey-100);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  border-radius: 100px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 1.25rem;
+  color: var(--grey-800);
+  font-style: italic;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+}
+
+.author strong {
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+
+.author span {
+  font-size: 0.9rem;
+  color: var(--grey-500);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--grey-300);
+}
+
+.dotActive {
+  background: var(--accent);
+  transform: scale(1.3);
+}
