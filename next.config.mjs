@@ -9,8 +9,8 @@ const nextConfig = {
     unoptimized: true,
   },
   // Use basePath for GitHub Pages, but NOT for Vercel or Local
-  basePath: (isProd && !isVercel) ? '/pgi-corporate-website' : '',
-  assetPrefix: (isProd && !isVercel) ? '/pgi-corporate-website/' : '',
+  basePath: (isProd && !isVercel) ? '/PG-Corporate-Website-' : '',
+  assetPrefix: (isProd && !isVercel) ? '/PG-Corporate-Website-/' : '',
 };
 
 export default nextConfig;
