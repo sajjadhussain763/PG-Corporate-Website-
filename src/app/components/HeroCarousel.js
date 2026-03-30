@@ -1,62 +1,76 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import styles from './HeroCarousel.module.css';
-
-function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState({ days: 2, hours: 14, mins: 35, secs: 42 });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.secs > 0) return { ...prev, secs: prev.secs - 1 };
-        if (prev.mins > 0) return { ...prev, mins: prev.mins - 1, secs: 59 };
-        if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, mins: 59, secs: 59 };
-        return prev;
-      });
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <div className={styles.timer} suppressHydrationWarning>
-      <div className={styles.timerUnit} suppressHydrationWarning><span>{timeLeft.days}</span><span>Days</span></div>
-      <div className={styles.timerUnit} suppressHydrationWarning><span>{timeLeft.hours}</span><span>Hrs</span></div>
-      <div className={styles.timerUnit} suppressHydrationWarning><span>{timeLeft.mins}</span><span>Mins</span></div>
-      <div className={styles.timerUnit} suppressHydrationWarning><span>{timeLeft.secs}</span><span>Secs</span></div>
-    </div>
-  );
-}
+import Link from 'next/link';
 
 export default function HeroCarousel() {
   return (
-    <section className={styles.hero}>
-      <div className={styles.bgOrbs}>
-        <div className={styles.orb1} />
-        <div className={styles.orb2} />
-      </div>
+    <section style={{ 
+      minHeight: '80vh', 
+      background: 'white', 
+      display: 'flex', 
+      alignItems: 'center', 
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      {/* Background Decorative Element */}
+      <div style={{ 
+        position: 'absolute', 
+        top: '-10%', 
+        right: '-10%', 
+        width: '60%', 
+        height: '120%', 
+        background: 'var(--grey-100)', 
+        borderRadius: '100% 0 0 100%',
+        zIndex: 0
+      }}></div>
 
-      <div className={`container ${styles.inner}`}>
-        <div className={styles.content}>
-          <div className={styles.saleBadge}>🔥 FLASH SALE: 20% OFF ALL PLACEMENTS</div>
-          <h1 className={styles.title}>Global Work <span className="text-gradient">Placements</span></h1>
-          <p className={styles.subtitle}>
-            Secure your future with elite international internships. Don't miss out on the upcoming semester's pre-placement advantage.
+      <div className="container" style={{ position: 'relative', zIndex: 5 }}>
+        <div style={{ maxWidth: '700px' }}>
+          <span className="section-label animate-fadeIn" style={{ animationDelay: '0.2s' }}>Europe's Leading Provider</span>
+          <h1 className="animate-slideInLeft" style={{ 
+            fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', 
+            marginBottom: '32px', 
+            color: 'var(--primary-navy)',
+            lineHeight: '1.1'
+          }}>
+            Pioneering <span className="text-gradient">International Excellence</span> in Education
+          </h1>
+          <p className="animate-fadeInUp" style={{ 
+            fontSize: '1.25rem', 
+            color: 'var(--text-secondary)', 
+            marginBottom: '48px', 
+            lineHeight: '1.7',
+            animationDelay: '0.4s'
+          }}>
+            Paragon Europe is a 21st-century high-growth company delivering bespoke mobility solutions, academic excellence programmes, and strategic internships across the continent.
           </p>
           
-          <div className={styles.offerBox}>
-            <span className={styles.offerLabel}>Limited Time Offer Ends In:</span>
-            <CountdownTimer />
-          </div>
-
-          <div className={styles.ctas}>
-            <a href="#packages" className="btn btn-primary btn-lg" suppressHydrationWarning>
-              Claim Your Discount
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#about" className="btn btn-secondary btn-lg" suppressHydrationWarning>View Testimonials</a>
+          <div className="flex gap-6 animate-fadeInUp" style={{ 
+            display: 'flex', 
+            gap: '24px', 
+            animationDelay: '0.6s',
+            flexWrap: 'wrap'
+          }}>
+            <Link href="/academic-excellence" className="btn btn-primary btn-lg">Academic Excellence</Link>
+            <Link href="/programmes" className="btn btn-outline btn-lg">Explore All Programmes</Link>
           </div>
         </div>
+      </div>
+      
+      {/* Scroll Indicator */}
+      <div style={{ 
+        position: 'absolute', 
+        bottom: '40px', 
+        left: '50%', 
+        transform: 'translateX(-50%)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '12px',
+        opacity: 0.4
+      }}>
+        <span style={{ fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>Scroll</span>
+        <div style={{ width: '2px', height: '40px', background: 'var(--primary-navy)' }}></div>
       </div>
     </section>
   );

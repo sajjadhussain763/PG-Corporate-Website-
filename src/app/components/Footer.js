@@ -1,66 +1,55 @@
 'use client';
 
-import styles from './Footer.module.css';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer style={{ background: 'var(--primary-navy)', padding: '100px 0 40px', color: 'white' }}>
       <div className="container">
-        <div className={styles.grid}>
-          <div className={styles.logoArea}>
-            <a href="#home" className={styles.logo}>
-              PG<span>Training</span>
-            </a>
-            <p className={styles.tagline}>
-              Global leaders in English language education and international work placement solutions since 2000.
-            </p>
-            <div className={styles.socials}>
-              {['fb', 'tw', 'ig', 'li'].map(s => (
-                <a key={s} href="#" className={styles.socialIcon}>
-                  {s.toUpperCase()}
-                </a>
-              ))}
-            </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '60px', marginBottom: '80px' }}>
+          <div style={{ gridColumn: 'span 1' }}>
+             <Logo className="mb-8" />
+             <p style={{ marginTop: '32px', color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: '1.7' }}>
+               A 21st-century high-growth company dedicated to empowering your university and students through unparalleled academic mobility and international excellence.
+             </p>
           </div>
 
-          <div className={styles.column}>
-            <h4 className={styles.columnTitle}>Company</h4>
-            <div className={styles.links}>
-              <a href="#about" className={styles.link}>About Us</a>
-              <a href="#programmes" className={styles.link}>Our Programmes</a>
-              <a href="#packages" className={styles.link}>Pricing Packages</a>
-              <a href="#contact" className={styles.link}>Contact Us</a>
-            </div>
+          <div>
+             <h4 style={{ color: 'white', marginBottom: '32px' }}>Programmes</h4>
+             <ul style={{ display: 'grid', gap: '16px' }}>
+               {['Academic Excellence', 'Erasmus+ Mobility', 'English for Professionals', 'Higher Education'].map(link => (
+                 <li key={link}><a href="#" style={{ color: 'rgba(255,255,255,0.7)', transition: '0.3s' }}>{link}</a></li>
+               ))}
+             </ul>
           </div>
 
-          <div className={styles.column}>
-            <h4 className={styles.columnTitle}>Services</h4>
-            <div className={styles.links}>
-              <a href="#" className={styles.link}>Mobility Solutions</a>
-              <a href="#" className={styles.link}>Academic Placements</a>
-              <a href="#" className={styles.link}>Remote Internships</a>
-              <a href="#" className={styles.link}>Corporate Training</a>
-            </div>
+          <div>
+             <h4 style={{ color: 'white', marginBottom: '32px' }}>Company</h4>
+             <ul style={{ display: 'grid', gap: '16px' }}>
+               {['About Us', 'Our Mission', 'Brand Guidelines', 'Global Offices'].map(link => (
+                 <li key={link}><a href="#" style={{ color: 'rgba(255,255,255,0.7)', transition: '0.3s' }}>{link}</a></li>
+               ))}
+             </ul>
           </div>
 
-          <div className={styles.column}>
-            <h4 className={styles.columnTitle}>Support</h4>
-            <div className={styles.links}>
-              <a href="#" className={styles.link}>Help Center</a>
-              <a href="#" className={styles.link}>Order Tracking</a>
-              <a href="#" className={styles.link}>FAQs</a>
-              <a href="#" className={styles.link}>Language / EN</a>
-            </div>
+          <div>
+             <h4 style={{ color: 'white', marginBottom: '32px' }}>Contact</h4>
+             <ul style={{ display: 'grid', gap: '16px' }}>
+               <li style={{ color: 'rgba(255,255,255,0.7)' }}>25+ Years of Experience</li>
+               <li style={{ color: 'rgba(255,255,255,0.7)' }}>Malta, HQ Office</li>
+               <li style={{ color: 'white', fontWeight: 'bold' }}>info@paragoneurope.eu</li>
+             </ul>
           </div>
         </div>
 
-        <div className={styles.bottom}>
-          <p className={styles.copyright}>
-            © {new Date().getFullYear()} PG Training. All Rights Reserved.
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>
+            © {new Date().getFullYear()} Paragon Europe. All Rights Reserved.
           </p>
-          <div className={styles.bottomLinks}>
-            <a href="#" className={styles.link}>Privacy Policy</a>
-            <a href="#" className={styles.link}>Terms of Service</a>
+          <div style={{ display: 'flex', gap: '32px' }}>
+            {['Privacy Policy', 'Terms of Use', 'Erasmus+ Framework'].map(l => (
+              <a key={l} href="#" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>{l}</a>
+            ))}
           </div>
         </div>
       </div>
