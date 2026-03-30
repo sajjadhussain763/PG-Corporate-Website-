@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '60px', marginBottom: '80px' }}>
           <div style={{ gridColumn: 'span 1' }}>
-             <Logo className="mb-8" />
+             <Logo inverted={true} size="sm" className="mb-8" />
              <p style={{ marginTop: '32px', color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: '1.7' }}>
                A 21st-century high-growth company dedicated to empowering your university and students through unparalleled academic mobility and international excellence.
              </p>

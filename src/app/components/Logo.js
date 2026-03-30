@@ -1,29 +1,128 @@
 'use client';
 
-export default function Logo({ className = '' }) {
+// Branded Star Icon component for decorative use
+export function StarIcon({ size = 'sm' }) {
+  const iconSizes = {
+    sm: '40px',
+    md: '60px',
+    lg: '80px'
+  };
+
+  const currentIconSize = iconSizes[size] || iconSizes.sm;
+
   return (
-    <div className={`flex items-center gap-3 ${className}`} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-      {/* Maltese Cross with 6 Stars */}
-      <div style={{ position: 'relative', width: '40px', height: '40px' }}>
-        <svg viewBox="0 0 100 100" fill="var(--primary-navy)" xmlns="http://www.w3.org/2000/svg">
-          {/* Maltese Cross Shape */}
-          <path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" opacity="0.1" />
+    <div style={{ position: 'relative', width: currentIconSize, height: currentIconSize }}>
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(50, 50)">
+          {/* Recreated multi-layer star based on user image */}
+          {/* Base Magenta Star */}
+          <path d="M0 -45 L12 -12 L45 0 L12 12 L0 45 L-12 12 L-45 0 L-12 -12 Z" fill="#EC008C" opacity="0.8" />
           
-          {/* 6 Stars Formation (Conceptual representation) */}
-          <g fill="var(--primary-navy)">
-            <path d="M50 10 L54 22 L66 22 L56 30 L60 42 L50 34 L40 42 L44 30 L34 22 L46 22 Z" transform="translate(0, 5) scale(0.8)" />
-            <path d="M50 10 L54 22 L66 22 L56 30 L60 42 L50 34 L40 42 L44 30 L34 22 L46 22 Z" transform="translate(25, 25) scale(0.6)" />
-            <path d="M50 10 L54 22 L66 22 L56 30 L60 42 L50 34 L40 42 L44 30 L34 22 L46 22 Z" transform="translate(-25, 25) scale(0.6)" />
-            <path d="M50 10 L54 22 L66 22 L56 30 L60 42 L50 34 L40 42 L44 30 L34 22 L46 22 Z" transform="translate(15, 55) scale(0.7)" />
-            <path d="M50 10 L54 22 L66 22 L56 30 L60 42 L50 34 L40 42 L44 30 L34 22 L46 22 Z" transform="translate(-15, 55) scale(0.7)" />
-            <path d="M50 10 L54 22 L66 22 L56 30 L60 42 L50 34 L40 42 L44 30 L34 22 L46 22 Z" transform="translate(0, 80) scale(0.5)" />
-          </g>
-        </svg>
+          {/* Yellow Star rotated */}
+          <path d="M0 -45 L12 -12 L45 0 L12 12 L0 45 L-12 12 L-45 0 L-12 -12 Z" fill="#FFF200" opacity="0.7" transform="rotate(30)" />
+          
+          {/* Turquoise Star rotated */}
+          <path d="M0 -45 L12 -12 L45 0 L12 12 L0 45 L-12 12 L-45 0 L-12 -12 Z" fill="#00A99D" opacity="0.7" transform="rotate(60)" />
+
+          {/* Light Blue Star rotated */}
+          <path d="M0 -45 L12 -12 L45 0 L12 12 L0 45 L-12 12 L-45 0 L-12 -12 Z" fill="#00AEEF" opacity="0.7" transform="rotate(90)" />
+          
+          {/* Orange Star rotated */}
+          <path d="M0 -45 L12 -12 L45 0 L12 12 L0 45 L-12 12 L-45 0 L-12 -12 Z" fill="#F7941D" opacity="0.7" transform="rotate(45)" />
+
+          {/* Inner Highlight Layer */}
+          <path d="M0 -20 L6 -6 L20 0 L6 6 L0 20 L-6 6 L-20 0 L-6 -6 Z" fill="#FFFFFF" opacity="0.4" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+// Main Logo Component
+export default function Logo({ className = '', inverted = false, horizontal = false, size = 'sm' }) {
+  // Brand Colors
+  const navy = 'var(--primary-navy)';
+  const lightBlue = 'var(--primary-blue)';
+  const gray = '#777777';
+  
+  // Icon size configuration
+  const iconSizes = {
+    sm: horizontal ? '35px' : '40px',
+    md: '60px',
+    lg: '80px'
+  };
+
+  const currentIconSize = iconSizes[size] || iconSizes.sm;
+
+  if (horizontal) {
+    return (
+      <div className={`flex items-center gap-3 ${className}`} style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+        <StarIcon size={size} />
+        <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.1' }}>
+          <span style={{ 
+            fontFamily: 'var(--font-heading)', 
+            fontWeight: '700', 
+            fontSize: '1.2rem', 
+            color: inverted ? '#FFFFFF' : navy, 
+            letterSpacing: '2px', 
+            textTransform: 'uppercase' 
+          }}>
+            Paragon
+          </span>
+          <span style={{ 
+            fontFamily: 'var(--font-heading)', 
+            fontWeight: '600', 
+            fontSize: '0.9rem', 
+            color: inverted ? '#FFFFFF' : lightBlue, 
+            letterSpacing: '3px', 
+            textTransform: 'uppercase'
+          }}>
+            Europe
+          </span>
+        </div>
       </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
-        <span style={{ fontFamily: 'var(--font-heading)', fontWeight: '800', fontSize: '1.5rem', color: 'var(--primary-navy)', letterSpacing: '1px', textTransform: 'uppercase' }}>Paragon</span>
-        <span style={{ fontFamily: 'var(--font-heading)', fontWeight: '400', fontSize: '0.75rem', color: 'var(--accent-red)', letterSpacing: '4px', textTransform: 'uppercase', marginTop: '2px' }}>Europe</span>
+    );
+  }
+
+  return (
+    <div className={`flex flex-col items-center text-center ${className}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
+      <StarIcon size={size} />
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '1.1', marginTop: '4px' }}>
+        <span style={{ 
+          fontFamily: 'var(--font-heading)', 
+          fontWeight: '700', 
+          fontSize: '1.8rem', 
+          color: inverted ? '#FFFFFF' : navy, 
+          letterSpacing: '6px', 
+          textTransform: 'uppercase' 
+        }}>
+          Paragon
+        </span>
+        <span style={{ 
+          fontFamily: 'var(--font-heading)', 
+          fontWeight: '600', 
+          fontSize: '1.4rem', 
+          color: inverted ? '#FFFFFF' : lightBlue, 
+          letterSpacing: '8px', 
+          textTransform: 'uppercase'
+        }}>
+          Europe
+        </span>
+        <span style={{ 
+          fontFamily: 'var(--font-body)', 
+          fontWeight: '400', 
+          fontSize: '0.65rem', 
+          color: inverted ? 'rgba(255,255,255,0.7)' : gray, 
+          letterSpacing: '3px', 
+          textTransform: 'uppercase',
+          marginTop: '8px',
+          borderTop: inverted ? '1px solid rgba(255,255,255,0.2)' : '1px solid #eee',
+          paddingTop: '6px',
+          width: '100%',
+          opacity: 0.8
+        }}>
+          Realising Excellence
+        </span>
       </div>
     </div>
   );

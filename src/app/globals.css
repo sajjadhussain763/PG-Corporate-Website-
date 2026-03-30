@@ -6,7 +6,8 @@
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
-  --primary-navy: #312783; /* HEX: 49, 39, 131 */
+  --primary-navy: #312783;
+  --primary-blue: #00ADEF;
   --accent-red: #BE1622;
   --accent-orange: #F9B233;
   --accent-green: #008D36;

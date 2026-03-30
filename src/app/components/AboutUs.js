@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { StarIcon } from './Logo';
 import styles from './AboutUs.module.css';
 
 const STATS = [
@@ -51,13 +52,13 @@ export default function AboutUs() {
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.content}>
-            <span className="section-label">About PG Training</span>
+            <span className="section-label">About Paragon Europe</span>
             <h2 className="section-title">
               A Quarter-Century Legacy of <span className="text-gradient">Academic Excellence</span>
             </h2>
             <p className={styles.description}>
-              For over 25 years, PG Training has been at the forefront of professional development
-              in Higher Education. We have empowered more than 3,000 academic and administrative
+              For over 25 years, Paragon Europe has been at the forefront of professional development
+              and international mobility. We have empowered more than 3,000 academic and administrative
               staff worldwide, equipping them with the skills to drive institutional transformation
               and achieve global competence.
             </p>
@@ -68,21 +69,27 @@ export default function AboutUs() {
             </p>
             <div className={styles.highlights}>
               <div className={styles.highlight}>
-                <span className={styles.highlightIcon}>🎓</span>
+                <div className={styles.highlightIcon}>
+                  <StarIcon size="sm" />
+                </div>
                 <div>
                   <strong>PhD Candidates</strong>
                   <span>Research methodology support</span>
                 </div>
               </div>
               <div className={styles.highlight}>
-                <span className={styles.highlightIcon}>📊</span>
+                <div className={styles.highlightIcon}>
+                  <StarIcon size="sm" />
+                </div>
                 <div>
                   <strong>Heads of Department</strong>
                   <span>Strategic leadership programmes</span>
                 </div>
               </div>
               <div className={styles.highlight}>
-                <span className={styles.highlightIcon}>🌐</span>
+                <div className={styles.highlightIcon}>
+                  <StarIcon size="sm" />
+                </div>
                 <div>
                   <strong>Early-Career Academics</strong>
                   <span>Career acceleration pathways</span>

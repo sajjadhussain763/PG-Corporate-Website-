@@ -88,7 +88,7 @@ export default function CheckoutPage() {
               <div className={styles.invoice} id="invoice-print" style={{ border: '1px solid var(--grey-200)', boxShadow: 'var(--shadow-lg)' }}>
                 <div className={styles.invoiceHeader}>
                   <div className={styles.brand}>
-                    <Logo />
+                    <Logo size="md" />
                     <p style={{ marginTop: '12px', color: 'var(--text-muted)' }}>Excellence in Global Placements</p>
                   </div>
                   <div className={styles.invoiceMeta}>

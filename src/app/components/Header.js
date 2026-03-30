@@ -38,7 +38,7 @@ export default function Header() {
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link href="/" className="logo-container">
-          <Logo />
+          <Logo horizontal={true} size="sm" />
         </Link>
 
         {/* Desktop Nav */}
